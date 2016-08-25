@@ -10,13 +10,9 @@ endif
 silent !mkdir ~/.vim/swap > /dev/null 2>&1
 set directory^=$HOME/.vim/swap//
 
-set guifont=Inconsolata_for_Powerline:h10:cANSI
-let g:airline_powerline_fonts = 1
-set fileencodings=utf-8
-set termencoding=utf-8
-set encoding=utf-8
-set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
-set laststatus=2
+set fileencodings=utf8
+set termencoding=utf8
+set encoding=utf8
 
 set t_Co=256
 set nowrap
@@ -30,7 +26,7 @@ set number
 set autoindent
 set copyindent
 
-call plug#begin()
+call plug#begin("~/.vim/plugged")
 
 Plug 'fatih/vim-go'
 Plug 'jonathanfilip/vim-lucius'
@@ -67,10 +63,20 @@ let g:go_fmt_autosave = 1
 "" UI
 " airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
+
+" airline theme unicode symbols
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " maps
 map <C-\> :NERDTreeToggle<CR>
