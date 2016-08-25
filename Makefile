@@ -1,5 +1,5 @@
 install: vim-plug
-	ln -sf $(PWD)/.vimrc $(HOME)/.vimrc
+	ln -sf $(PWD)/vimrc $(HOME)/.vimrc
 	mkdir -p $(HOME)/.vim
 	vim +PlugInstall +qall
 
