@@ -14,6 +14,7 @@ set fileencodings=utf8
 set termencoding=utf8
 set encoding=utf8
 
+set backspace=indent,eol,start
 set t_Co=256
 set nowrap
 set tabstop=4
