@@ -5,6 +5,6 @@ My development vim setting
 ### Usage
 
 ```
-git clone github.com/colindev/vimrc ~/vimrc && cd ~/vimrc
+git clone https://github.com/colindev/vimrc.git ~/vimrc && cd ~/vimrc
 make install
 ```
