@@ -24,6 +24,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set number
+set cursorline
 set autoindent
 set copyindent
 
@@ -61,6 +62,9 @@ let g:go_list_type = 'quickfix'
 let g:go_fmt_command = 'goimports'
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_autosave = 1
+
+" python
+let python_highlight_all = 1
 
 "" UI
 " airline
