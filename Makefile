@@ -1,6 +1,8 @@
-install: vim-plug
+
+install:
 	ln -sf $(PWD)/vimrc $(HOME)/.vimrc
 	mkdir -p $(HOME)/.vim
+	$(MAKE) vim-plug
 	vim +PlugInstall +GoInstallBibaries +qall
 
 vim-plug:
