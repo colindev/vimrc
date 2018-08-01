@@ -57,7 +57,7 @@ let g:syntastic_check_on_wq = 1
 " let g:syntastic_debug = 1
 
 " golang
-let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['go', 'govet', 'errcheck']
 let g:go_list_type = 'quickfix'
 let g:go_fmt_command = 'goimports'
 let g:go_fmt_fail_silently = 1
