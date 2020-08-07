@@ -43,7 +43,6 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
-
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
