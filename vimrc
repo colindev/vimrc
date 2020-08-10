@@ -1,19 +1,11 @@
-" Install vim-plug if we don't already have it
-if empty(glob("~/.vim/autoload/plug.vim"))
-	" Ensure all needed directories exist  (Thanks @kapadiamush)
-	execute 'mkdir -p ~/.vim/plugged'
-	execute 'mkdir -p ~/.vim/autoload'
-	" Download the actual plugin manager
-	execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
-endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-silent !mkdir ~/.vim/swap > /dev/null 2>&1
-set directory^=$HOME/.vim/swap//
-
+silent !mkdir ~/.vim_swap > /dev/null 2>&1
+set directory^=$HOME/.vim_swap/
 set fileencodings=utf8
 set termencoding=utf8
 set encoding=utf8
-
 set backspace=indent,eol,start
 set t_Co=256
 set nowrap
@@ -28,17 +20,24 @@ set cursorline
 set autoindent
 set copyindent
 
-call plug#begin("~/.vim/plugged")
+if empty(glob("~/.vim/bundle/Vundle.vim"))
+	execute '!git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
+endif
 
-Plug 'fatih/vim-go'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-call plug#end()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'fatih/vim-go'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
