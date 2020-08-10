@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-silent !mkdir ~/.vim_swap > /dev/null 2>&1
+silent !mkdir -p ~/.vim_swap > /dev/null 2>&1
 set directory^=$HOME/.vim_swap/
 set fileencodings=utf8
 set termencoding=utf8
@@ -20,6 +20,7 @@ set cursorline
 set autoindent
 set copyindent
 
+silent !mkdir -p ~/.vim > /dev/null 2>&1
 if empty(glob("~/.vim/bundle/Vundle.vim"))
 	execute '!git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 endif
@@ -30,18 +31,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fatih/vim-go'
-Plugin 'jonathanfilip/vim-lucius'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jonathanfilip/vim-lucius'
 
 call vundle#end()
 
 filetype plugin indent on
 syntax on
-
 
 " syntastic
 set statusline+=%#warningmsg#
