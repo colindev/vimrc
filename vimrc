@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set title
 set fileencodings=utf8
 set termencoding=utf8
 set encoding=utf8
@@ -15,6 +16,7 @@ set smarttab
 set expandtab
 set number
 set cursorline
+set autoread
 set autoindent
 set copyindent
 
@@ -32,7 +34,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fatih/vim-go'
-Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
@@ -85,7 +86,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " maps
 map <C-\> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+nnoremap <C-a> I
+nnoremap <C-e> A
+nnoremap <Leader>" viw<esc>bi"<esc>ea"<esc>
+nnoremap <Leader>' viw<esc>bi'<esc>ea'<esc>
 
 " colors
 silent! colorscheme lucius
