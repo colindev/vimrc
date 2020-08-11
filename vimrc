@@ -1,8 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-silent! mkdir -p ~/.vim_swap > /dev/null 2>&1
-set directory^=$HOME/.vim_swap/
 set fileencodings=utf8
 set termencoding=utf8
 set encoding=utf8
@@ -20,7 +18,10 @@ set cursorline
 set autoindent
 set copyindent
 
-silent! mkdir -p ~/.vim > /dev/null 2>&1
+silent ! mkdir -p ~/.vim_swap > /dev/null 2>&1
+set directory^=$HOME/.vim_swap/
+
+silent ! mkdir -p ~/.vim > /dev/null 2>&1
 if empty(glob("~/.vim/bundle/Vundle.vim"))
 	execute '!git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 endif
