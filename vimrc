@@ -1,24 +1,46 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " required
 filetype off                  " required
 
 set title
+set number
+set nowrap
+set scrolloff=5
+set backspace=2 "indent,eol,start
+
+""" encoding
 set fileencodings=utf8
 set termencoding=utf8
 set encoding=utf8
-set backspace=indent,eol,start
-set t_Co=256
-set nowrap
-set tabstop=4
-set tags=tags
-set softtabstop=4
-set shiftwidth=4
-set smarttab
+
+""" tab
 set expandtab
-set number
-set cursorline
-set autoread
+set smarttab
+
+""" indent
 set autoindent
+set smartindent
 set copyindent
+set shiftround
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+""" cursors
+set cursorline
+"set cursorcolumn
+"set autoread
+"autocmd CursorHold,CursorHoldI * checktime
+
+""" color
+set t_Co=256
+
+""" mouse
+"set mouse
+
+""" close all bell
+set novisualbell
+set noerrorbells
+set visualbell t_vb=
 
 silent ! mkdir -p ~/.vim_swap > /dev/null 2>&1
 set directory^=$HOME/.vim_swap/
@@ -85,9 +107,14 @@ let g:airline_symbols.paste = '|'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " maps
+let mapleader = ' '
+nnoremap <space> <Nop>
 map <C-\> :NERDTreeToggle<CR>
 nnoremap <C-a> I
 nnoremap <C-e> A
+inoremap <C-a> <esc>I
+inoremap <C-e> <esc>A
+nnoremap <C-x> :q!<CR>
 nnoremap <Leader>" viw<esc>bi"<esc>ea"<esc>
 nnoremap <Leader>' viw<esc>bi'<esc>ea'<esc>
 
