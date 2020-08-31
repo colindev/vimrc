@@ -56,8 +56,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fatih/vim-go'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plugin 'preservim/nerdtree'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jonathanfilip/vim-lucius'
@@ -80,7 +80,7 @@ let g:syntastic_check_on_wq = 1
 " let g:syntastic_debug = 1
 
 " golang
-let g:syntastic_go_checkers = ['go', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['govet', 'errcheck']
 let g:go_list_type = 'quickfix'
 let g:go_fmt_command = 'goimports'
 let g:go_fmt_fail_silently = 1
@@ -121,3 +121,6 @@ nnoremap <Leader>' viw<esc>bi'<esc>ea'<esc>
 " colors
 silent! colorscheme lucius
 silent! LuciusDark
+
+" autocmd
+"autocmd BufWritePost $MYVIMRC source $MYVIMRC
