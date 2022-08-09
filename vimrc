@@ -61,6 +61,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
